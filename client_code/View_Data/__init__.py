@@ -9,6 +9,12 @@ class View_Data(View_DataTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.show_files_dropdown()()
+  def show_files_dropdown(self, **event_args):
+    self.drop_down_1.items = [row['path'] for row in app_tables.files.search()]
+
+
+
 
 
 

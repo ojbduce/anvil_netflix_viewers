@@ -16,7 +16,7 @@ metadata: {title: Pandas Dashboard, description: User Uploads and reads data dis
 startup_form: null
 db_schema:
   files:
-    client: none
+    client: search
     server: full
     columns:
     - name: path
