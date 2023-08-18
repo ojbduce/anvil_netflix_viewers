@@ -1,0 +1,107 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: column_panel_2
+  layout_properties: {grid_position: 'IOARRR,SLUVVT'}
+  components:
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'MMKRPR,NGNSUA'}
+    components:
+    - type: Label
+      properties: {role: title, align: center, tooltip: '', border: '', foreground: '',
+        visible: true, text: My Data, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_3
+      layout_properties: {grid_position: 'HZZBUB,WYRVIV'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_1
+      layout_properties: {grid_position: 'HZZBUB,SYYZMJ'}
+    - type: ColumnPanel
+      properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+        wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+        spacing_below: small, background: ''}
+      name: outlined_card_1
+      layout_properties: {grid_position: 'HZZBUB,OCTDLY'}
+      components:
+      - type: FileLoader
+        properties:
+          role: tonal-button
+          show_state: true
+          align: center
+          tooltip: ''
+          border: ''
+          file_types: null
+          enabled: true
+          files: []
+          foreground: ''
+          visible: true
+          text: ''
+          font_size: null
+          font: ''
+          spacing_above: small
+          icon_align: left
+          spacing_below: small
+          italic: false
+          file: null
+          background: ''
+          bold: false
+          underline: false
+          multiple: false
+          icon: fa:upload
+        name: file_loader_1
+        layout_properties: {grid_position: 'NZRJMY,JHHZLE'}
+        event_bindings: {change: file_loader_1_change}
+      - type: Button
+        properties: {role: filled-button, align: center, tooltip: '', border: '',
+          enabled: true, foreground: '', visible: true, text: '', font_size: null,
+          font: '', spacing_above: small, icon_align: left, spacing_below: small,
+          italic: false, background: '', bold: false, underline: false, icon: 'fa:refresh'}
+        name: button_refresh
+        layout_properties: {grid_position: 'NZRJMY,WVTOJG'}
+    - type: ColumnPanel
+      properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+        wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+        spacing_below: small, background: ''}
+      name: outlined_card_3
+      layout_properties: {grid_position: 'FQYDGR,PQQRUX'}
+      components:
+      - type: ColumnPanel
+        properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+          wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+          spacing_below: small, background: 'theme:Light Overlay 2'}
+        name: outlined_card_4
+        layout_properties: {grid_position: 'YZQKDC,RFLQEY'}
+        components:
+        - type: DataGrid
+          properties:
+            role: tonal-data-grid
+            columns:
+            - {id: HPJGDT, title: Name, data_key: path, $$hashKey: 'object:39810'}
+            - {id: ACXJPB, title: File, data_key: file, $$hashKey: 'object:39811'}
+            - {id: JYWLMX, title: Version, data_key: version, $$hashKey: 'object:39812'}
+            auto_header: true
+            tooltip: ''
+            border: ''
+            foreground: ''
+            rows_per_page: 20
+            visible: true
+            wrap_on: never
+            show_page_controls: true
+            spacing_above: small
+            spacing_below: small
+            background: ''
+          name: data_grid_1
+          layout_properties: {grid_position: 'BYCZKF,YNBUME'}
+          components:
+          - type: RepeatingPanel
+            properties: {spacing_above: none, spacing_below: none, item_template: Upload_Data.RowTemplate1}
+            name: repeating_panel_1
+            layout_properties: {}
+is_package: true

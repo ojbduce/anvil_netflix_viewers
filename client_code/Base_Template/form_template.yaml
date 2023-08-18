@@ -17,16 +17,17 @@ components:
     properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: '', font_size: null, wrap_on: mobile, font: '', col_spacing: medium,
       spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
-      italic: false, background: '', bold: false, underline: false, icon: 'fa:briefcase'}
-    name: link_admin
+      italic: false, background: '', bold: false, underline: false, icon: 'fa:home'}
+    name: link_home
     layout_properties: {}
   - type: Link
     properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: '', font_size: null, wrap_on: mobile, font: '', col_spacing: medium,
       spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
-      italic: false, background: '', bold: false, underline: false, icon: 'fa:home'}
-    name: link_home
+      italic: false, background: '', bold: false, underline: false, icon: 'fa:briefcase'}
+    name: link_admin
     layout_properties: {}
+    event_bindings: {click: link_admin_click}
   - type: Link
     properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: '', font_size: null, wrap_on: mobile, font: '', col_spacing: medium,

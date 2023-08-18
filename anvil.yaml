@@ -3,7 +3,7 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: Base_Template}
+startup: {type: form, module: Upload_Data}
 package_name: Pandas_Dashboard
 allow_embedding: false
 name: Pandas Dashboard
@@ -14,4 +14,19 @@ runtime_options:
   server_spec: {base: python310-standard}
 metadata: {title: Pandas Dashboard, description: User Uploads and reads data displayed on a plot}
 startup_form: null
+db_schema:
+  files:
+    client: none
+    server: full
+    columns:
+    - name: path
+      admin_ui: {order: 0, width: 200}
+      type: string
+    - name: file
+      admin_ui: {order: 1, width: 200}
+      type: media
+    - name: version
+      admin_ui: {order: 2, width: 200}
+      type: string
+    title: files
 renamed: true
