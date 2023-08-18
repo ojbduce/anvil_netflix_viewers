@@ -3,7 +3,7 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: Upload_Data}
+startup: {type: form, module: My_Data}
 package_name: Pandas_Dashboard
 allow_embedding: false
 name: Pandas Dashboard

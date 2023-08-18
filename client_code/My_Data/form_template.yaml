@@ -55,7 +55,7 @@ components:
           underline: false
           multiple: false
           icon: fa:upload
-        name: file_loader_1
+        name: file_loader_my_data
         layout_properties: {grid_position: 'NZRJMY,JHHZLE'}
         event_bindings: {change: file_loader_1_change}
       - type: Button
@@ -65,6 +65,7 @@ components:
           italic: false, background: '', bold: false, underline: false, icon: 'fa:refresh'}
         name: button_refresh
         layout_properties: {grid_position: 'NZRJMY,WVTOJG'}
+        event_bindings: {click: button_refresh_click}
     - type: ColumnPanel
       properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
         wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
@@ -101,7 +102,7 @@ components:
           layout_properties: {grid_position: 'BYCZKF,YNBUME'}
           components:
           - type: RepeatingPanel
-            properties: {spacing_above: none, spacing_below: none, item_template: Upload_Data.RowTemplate1}
+            properties: {spacing_above: none, spacing_below: none, item_template: My_Data.RowTemplate1}
             name: repeating_panel_1
             layout_properties: {}
 is_package: true
