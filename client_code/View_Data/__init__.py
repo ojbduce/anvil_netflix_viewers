@@ -9,7 +9,7 @@ class View_Data(View_DataTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.show_files_dropdown()()
+    self.show_files_dropdown()
   def show_files_dropdown(self, **event_args):
     self.drop_down_1.items = [row['path'] for row in app_tables.files.search()]
 
@@ -19,3 +19,8 @@ class View_Data(View_DataTemplate):
 
 
     # Any code you write here will run before the form opens.
+
+  #def form_show(self, **event_args):
+   # """This method is called when the column panel is shown on the screen"""
+    #self.drop_down_1.items = [row['path'] for row in app_tables.files.search()]
+

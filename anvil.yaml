@@ -3,7 +3,7 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: View_Data}
+startup: {type: form, module: My_Data}
 package_name: Pandas_Dashboard
 allow_embedding: false
 name: Pandas Dashboard
@@ -16,7 +16,7 @@ metadata: {title: Pandas Dashboard, description: User Uploads and reads data dis
 startup_form: null
 db_schema:
   files:
-    client: search
+    client: full
     server: full
     columns:
     - name: path
