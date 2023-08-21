@@ -3,6 +3,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
 import uuid 
+import pandas as pd
 
 @anvil.server.callable #why not?
 def generate_unique_id():
@@ -18,3 +19,8 @@ def upload_a_file_to_database(file):
 @anvil.server.callable
 def show_uploaded_files():
   return app_tables.files.search()
+
+def csv_to_dataframe(file):
+  file = file
+  dataframe = pd.read_csv(file)
+  print (dataframe)

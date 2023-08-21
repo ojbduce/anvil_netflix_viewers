@@ -4,10 +4,10 @@ container:
   event_bindings: {}
 components:
 - type: Label
-  properties: {role: headline, align: left, tooltip: '', border: '', foreground: '',
-    visible: true, text: Netflix Data Visualization, font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-    underline: false, icon: ''}
+  properties: {role: headline, align: left, tooltip: '', border: '', foreground: 'theme:On
+      Primary', visible: true, text: 'Netflix Viewers: Data Visualization', font_size: 28,
+    font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+    background: 'theme:Primary', bold: true, underline: false, icon: ''}
   name: label_2
   layout_properties: {grid_position: 'KKKAXH,KXCNOQ', full_width_row: true}
 - type: ColumnPanel
@@ -29,7 +29,7 @@ components:
         icon_align: left, spacing_below: small, italic: false, background: 'theme:Light
           Overlay 1', bold: false, underline: false, icon: ''}
       name: label_1
-      layout_properties: {row: RBLGNZ, width_xs: 2, col_xs: 0, width: 145.164}
+      layout_properties: {row: UEWLIK, width_xs: 2, col_xs: 0, width: 145.164}
     - type: DropDown
       properties:
         role: null
@@ -51,15 +51,7 @@ components:
         underline: false
         include_placeholder: true
       name: drop_down_1
-      layout_properties: {grid_position: 'SDANPJ,VIBJZS', row: RBLGNZ, width_xs: 4,
+      layout_properties: {grid_position: 'SDANPJ,VIBJZS', row: UEWLIK, width_xs: 4,
         col_xs: 8, width: 320.328}
       event_bindings: {change: drop_down_1_change}
-    - type: Label
-      properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
-        visible: true, text: '', font_size: null, font: '', spacing_above: small,
-        icon_align: left, spacing_below: small, italic: false, background: 'theme:Surface
-          Variant', bold: false, underline: false, icon: ''}
-      name: label_showing
-      layout_properties: {grid_position: 'GJEGPZ,OHZUCB', full_width_row: true, row: NRQCXE,
-        width_xs: 12, col_xs: 0, width: 1021}
 is_package: true

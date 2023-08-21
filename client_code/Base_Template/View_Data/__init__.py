@@ -11,7 +11,7 @@ class View_Data(View_DataTemplate):
     self.init_components(**properties)
     self.show_files_dropdown()
     if self.drop_down_1.selected_value:
-      self.label_showing.text = self.drop_down_1.selected_value
+      self.label_1.text = self.drop_down_1.selected_value
   def show_files_dropdown(self, **event_args):
     self.drop_down_1.items = [row['path'] for row in app_tables.files.search()]
 
@@ -28,6 +28,6 @@ class View_Data(View_DataTemplate):
 
   def drop_down_1_change(self, **event_args):
     """This method is called when an item is selected"""
-    self.label_showing.text = self.drop_down_1.selected_value
+    self.label_1.text = self.drop_down_1.selected_value
 
 
