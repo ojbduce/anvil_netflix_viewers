@@ -86,7 +86,8 @@ components:
             columns:
             - {id: HPJGDT, title: Name, data_key: path, $$hashKey: 'object:39810'}
             - {id: ACXJPB, title: File, data_key: file, $$hashKey: 'object:39811'}
-            - {id: JYWLMX, title: Version, data_key: version, $$hashKey: 'object:39812'}
+            - {id: SMOHXK, title: Version, data_key: version, $$hashKey: 'object:119025'}
+            - {id: HIRZOR, title: Button, data_key: version, $$hashKey: 'object:104206'}
             auto_header: true
             tooltip: ''
             border: ''

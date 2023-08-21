@@ -18,4 +18,43 @@ components:
   layout_properties: {column: ACXJPB}
   data_bindings:
   - {property: url, code: 'self.item[''file'']'}
+- type: FlowPanel
+  properties: {}
+  name: flow_panel_1
+  layout_properties: {column: HIRZOR}
+  components:
+  - type: Button
+    properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: button_1, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: button_1
+    layout_properties: {}
+    event_bindings: {click: button_1_click}
+    data_bindings: []
+  - type: Label
+    properties: {}
+    name: label_2
+    layout_properties: {}
+    data_bindings:
+    - {property: text, code: 'self.item[''version'']'}
+  - type: Button
+    properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: button_2, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: button_2
+    layout_properties: {}
+    event_bindings: {}
+- type: Button
+  properties: {text: button_3}
+  name: button_3
+  layout_properties: {column: SMOHXK}
+  event_bindings: {click: button_3_click}
+- type: Label
+  properties: {}
+  name: label_3
+  layout_properties: {column: SMOHXK}
+  data_bindings:
+  - {property: text, code: 'self.item[''version'']'}
 is_package: true
