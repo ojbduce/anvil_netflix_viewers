@@ -4,6 +4,7 @@ from anvil.tables import app_tables
 import anvil.server
 import uuid 
 import pandas as pd
+from io import BytesIO
 
 @anvil.server.callable #why not?
 def generate_unique_id():
@@ -20,7 +21,15 @@ def upload_a_file_to_database(file):
 def show_uploaded_files():
   return app_tables.files.search()
 
-def csv_to_dataframe(file):
-  file = file
+@anvil.server.callable
+def csv_to_dataframe_bytes(file):
+  file_like_object = BytesIO(file.get_bytes())
+  dataframe = pd.read_csv(file_like_object)
+  print (dataframe)
+
+@anvil.server.callable
+def csv_to_dataframe_version(version_id):
+  row = app_tables.files.get(version = version_id)
+  file = row['file']
   dataframe = pd.read_csv(file)
   print (dataframe)
