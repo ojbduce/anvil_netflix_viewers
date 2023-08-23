@@ -3,7 +3,7 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: My_Data}
+startup: {type: form, module: Base_Template.View_Data}
 package_name: Pandas_Dashboard
 allow_embedding: false
 name: Pandas Dashboard
@@ -27,6 +27,9 @@ db_schema:
       type: media
     - name: version
       admin_ui: {order: 2, width: 200}
+      type: string
+    - name: category
+      admin_ui: {order: 3, width: 200}
       type: string
     title: files
 renamed: true

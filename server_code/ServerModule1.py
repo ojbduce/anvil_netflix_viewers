@@ -11,10 +11,12 @@ def generate_unique_id():
     return str(uuid.uuid4())
 
 @anvil.server.callable
-def upload_a_file_to_database(file):
+def upload_a_file_to_database(file, category):
+  category = category
+  print(category)
   version = generate_unique_id()
   # add file. file is media object, path is name attribute of file, version is return from above
-  app_tables.files.add_row(file=file, path=file.name, version=version)
+  app_tables.files.add_row(file=file, path=file.name, version=version, category=category)
   
   
 @anvil.server.callable
@@ -25,7 +27,8 @@ def show_uploaded_files():
 def csv_to_dataframe_bytes(file):
   file_like_object = BytesIO(file.get_bytes())
   dataframe = pd.read_csv(file_like_object)
-  print (dataframe)
+  pd.set_option('display.max_columns', None)
+  print (dataframe.head)
 
 @anvil.server.callable
 def csv_to_dataframe_version(version_id):
@@ -33,4 +36,24 @@ def csv_to_dataframe_version(version_id):
   file = row['file']
   file_like_object = BytesIO(file.get_bytes())
   dataframe = pd.read_csv(file_like_object)
-  print (dataframe)
+  #pd.set_option('display.width', 0)
+  pd.set_option('display.max_columns', None)
+  print (dataframe.head)
+
+@anvil.server.callable
+def process_data(data, category):
+    if category == 'netflix':
+      print(category)
+      return process_netflix_data(data)
+    elif category == 'other':
+      print(category)
+      print("Nothing available. Please check later.")
+        #return process_youtube_data(data)
+    # ... other categories
+    else:
+        raise ValueError(f"Unknown data category: {category}")
+      
+# choose file or version and archive the other function
+def process_netflix_data(file):
+  netflix_df = csv_to_dataframe_bytes(file)
+  netflix_df = netflix_df.loc[:,['type', 'country', 'date_added']]

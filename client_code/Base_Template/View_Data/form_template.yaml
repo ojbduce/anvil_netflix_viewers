@@ -79,4 +79,12 @@ components:
       name: button_inspect_data_location
       layout_properties: {grid_position: 'KACFDU,ETRABB'}
       event_bindings: {click: button_inspect_data_location_click}
+    - type: Button
+      properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '', visible: true, text: Process Data, font_size: null, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: 'theme:Secondary', bold: false, underline: false, icon: ''}
+      name: button_process_data
+      layout_properties: {grid_position: 'KACFDU,VCVJLQ'}
+      event_bindings: {click: button_process_data_click}
 is_package: true

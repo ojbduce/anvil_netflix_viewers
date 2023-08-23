@@ -32,20 +32,43 @@ class View_Data(View_DataTemplate):
 # Method to set self.selected_file
   def drop_down_1_change(self, **event_args):
     """This method is called when an item is selected"""
-    self.label_1.text = self.drop_down_1.selected_value['path']
-    selected_row = self.drop_down_1.selected_value
-    self.selected_file = selected_row['file']
-    print(self.selected_file) #Ok but what file?
+    try:
+      self.label_1.text = self.drop_down_1.selected_value['path']
+      selected_row = self.drop_down_1.selected_value
+      self.selected_file = selected_row['file']
+      print(self.selected_file) #Ok but what file?
+    except TypeError:
+      alert("Please select a data source from the drop-down box")
 
   def button_inspect_file_click(self, **event_args):
     """This method is called when the button is clicked"""
-    file = self.selected_file
-    anvil.server.call('csv_to_dataframe_bytes', file)
+    if self.drop_down_1.selected_value is not None:
+      file = self.selected_file
+      anvil.server.call('csv_to_dataframe_bytes', file)
+    else:
+      alert("Please select a data source from the drop-down box")
 
   def button_inspect_data_location_click(self, **event_args):
     """This method is called when the button is clicked"""
-    version_id = self.drop_down_1.selected_value['version']
-    anvil.server.call('csv_to_dataframe_version', version_id)
+    if self.drop_down_1.selected_value is not None:
+      version_id = self.drop_down_1.selected_value['version']
+      anvil.server.call('csv_to_dataframe_version', version_id)
+    else:
+      alert("Please select a data source from the drop-down box")
+      
+
+  
+
+  def button_process_data_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    if self.drop_down_1.selected_value is not None:
+      data = self.drop_down_1.selected_value['version']
+      category = self.drop_down_1.selected_value['category']
+      anvil.server.call('process_data', data, category)
+    else:
+      alert("Please select a data source from the drop-down box")
+
+
     
 
 
