@@ -9,6 +9,8 @@ class My_Data(My_DataTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.drop_down_file_category.items = None
+  
 
   
 
@@ -21,5 +23,15 @@ class My_Data(My_DataTemplate):
   def button_refresh_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.repeating_panel_1.items = anvil.server.call('show_uploaded_files')
+
+  def drop_down_1_change(self, **event_args):
+    """This method is called when an item is selected"""
+    pass
+
+  def form_show_drop_down_categories(self, **event_args):
+    """This method is called when the column panel is shown on the screen"""
+    categories = app_tables.files.search()
+
+
 
 
