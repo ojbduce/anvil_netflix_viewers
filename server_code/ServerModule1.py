@@ -31,5 +31,6 @@ def csv_to_dataframe_bytes(file):
 def csv_to_dataframe_version(version_id):
   row = app_tables.files.get(version = version_id)
   file = row['file']
-  dataframe = pd.read_csv(file)
+  file_like_object = BytesIO(file.get_bytes())
+  dataframe = pd.read_csv(file_like_object)
   print (dataframe)

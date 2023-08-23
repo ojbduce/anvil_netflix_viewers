@@ -16,8 +16,13 @@ class View_Data(View_DataTemplate):
   def show_files_dropdown(self, **event_args):
     #self.drop_down_1.items = [row['path'] for row in app_tables.files.search()]
     files = app_tables.files.search()
-    #self.drop_down_1.items = [(f['path'], f) for f in files]
-    self.drop_down_1.items = [(f['version'], f) for f in files]
+    # look at SearchIterator as list to understand what we are getting back.
+    files_as_list = list(files)
+    print("Getting files from Data Table:  ")
+    for row in files_as_list:
+      print(row)
+    self.drop_down_1.items = [(f['path'], f) for f in files]
+    #self.drop_down_1.items = [(f['version'], f) for f in files]
     
 
   #def form_show(self, **event_args):
