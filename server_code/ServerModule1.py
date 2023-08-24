@@ -35,10 +35,13 @@ def load_data_from_version(version_id):
   return dataframe
 
   # Inspect version. Print df.head
+@anvil.server.callable
 def inspect_data_from_version(version_id):
+  dataframe = load_data_from_version(version_id)
   #pd.set_option('display.width', 0)
   pd.set_option('display.max_columns', None)
   print (dataframe.head)
+
 
   # Check category. Extend to Data Factory
 @anvil.server.callable
@@ -56,16 +59,16 @@ def process_data(version_id, category):
         raise ValueError(f"Unknown data category: {category}")
       
   # Process according to category type
-def process_netflix_data(data):
+def process_netflix_data(version_id):
   netflix_df = load_data_from_version(version_id)
-  netflix_df = csv_to_dataframe_version(version_id) # or repeat code as seperate process?
   netflix_df = netflix_df.loc[:,['type', 'country', 'date_added']]
   netflix_df = netflix_df.dropna(subset=['country'])
   #netflix_df['Country'] = netflix_df['Country'].fillna('International')
   netflix_df['country'] = [countries[0] for countries in netflix_df['country'].str.split(',')]
   country_counts = pd.DataFrame(netflix_df['country'].value_counts().rename_axis('countries').reset_index(name='counts')).sort_values(by=['countries'])
   netflix_df['date_added'] = pd.to_datetime(netflix_df['date_added'])
-  return netflix_df, country_counts
+  print(netflix_df, country_counts)
+  #return netflix_df, country_counts
 
 
 

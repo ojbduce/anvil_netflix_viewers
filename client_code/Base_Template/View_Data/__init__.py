@@ -52,7 +52,7 @@ class View_Data(View_DataTemplate):
     """This method is called when the button is clicked"""
     if self.drop_down_1.selected_value is not None:
       version_id = self.drop_down_1.selected_value['version']
-      anvil.server.call('load_data_from_version', version_id)
+      anvil.server.call('inspect_data_from_version', version_id)
     else:
       alert("Please select a data source from the drop-down box")
       
