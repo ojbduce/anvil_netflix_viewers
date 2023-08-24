@@ -3,6 +3,14 @@ container:
   properties: {col_widths: '{}'}
   event_bindings: {}
 components:
+- type: Label
+  properties: {role: headline, align: left, tooltip: '', border: '', foreground: 'theme:On
+      Background', visible: true, text: 'Netflix Viewers: Data Visualization', font_size: 28,
+    font: '', spacing_above: small, icon_align: left, spacing_below: none, italic: false,
+    background: '', bold: true, underline: false, icon: ''}
+  name: label_2
+  layout_properties: {grid_position: 'PDLXRO,OXMMLK', full_width_row: true, row: HMGBJN,
+    width_xs: 12, col_xs: 0}
 - type: ColumnPanel
   properties: {role: tonal-card, tooltip: '', border: '', foreground: '', visible: true,
     wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '{}', spacing_below: small,
@@ -18,7 +26,7 @@ components:
       placeholder: Select Data Source
       border: ''
       enabled: true
-      foreground: ''
+      foreground: theme:On Surface Variant
       items: []
       visible: true
       font_size: null
@@ -26,7 +34,7 @@ components:
       spacing_above: small
       spacing_below: small
       italic: false
-      background: theme:Surface
+      background: theme:Dark Overlay 1
       bold: false
       underline: false
       include_placeholder: true
@@ -46,7 +54,8 @@ components:
     properties: {role: filled-button, align: center, tooltip: Dev Tool - Prints To Console,
       border: '', enabled: true, foreground: '', visible: true, text: Inspect Version,
       font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
-      italic: false, background: 'theme:Outline', bold: false, underline: false, icon: ''}
+      italic: false, background: 'theme:Secondary', bold: false, underline: false,
+      icon: ''}
     name: button_inspect_data_location
     layout_properties: {grid_position: 'KACFDU,ZKKDOI'}
     event_bindings: {click: button_inspect_data_location_click}
@@ -58,40 +67,16 @@ components:
     name: button_process_data
     layout_properties: {grid_position: 'KACFDU,GAIYZN'}
     event_bindings: {click: button_process_data_click}
-- type: ColumnPanel
-  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
-    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-    spacing_below: small, background: ''}
-  name: column_panel_1
-  layout_properties: {grid_position: 'KDCPRM,ERZPSK', full_width_row: true}
-  components:
-  - type: RichText
-    properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
-      foreground: 'theme:Tertiary Container', visible: true, font_size: null, content: '***',
-      font: '', spacing_above: small, spacing_below: small, data: null, background: 'theme:Light
-        Overlay 2', format: markdown}
-    name: rich_text_1
-    layout_properties: {grid_position: 'IAMYMC,NYOCWQ', full_width_row: true}
-    components:
-    - type: Label
-      properties: {role: headline, align: left, tooltip: '', border: '', foreground: 'theme:On
-          Primary Container', visible: true, text: 'Netflix Viewers: Data Visualization',
-        font_size: 28, font: '', spacing_above: small, icon_align: left, spacing_below: none,
-        italic: false, background: '', bold: true, underline: false, icon: ''}
-      name: label_2
-      layout_properties: {grid_position: 'XAVWKW,OCNMNL', full_width_row: true, row: HMGBJN,
-        width_xs: 12, col_xs: 0}
+- type: Spacer
+  properties: {height: 23}
+  name: spacer_1
+  layout_properties: {grid_position: 'GBMHZZ,FUVQTM'}
 - type: Label
   properties: {role: body, align: left, tooltip: '', border: '', foreground: 'theme:On
-      Primary Container', visible: true, text: Data File, font_size: 16, font: '',
-    spacing_above: none, icon_align: left, spacing_below: small, italic: false, background: '',
-    bold: false, underline: false, icon: 'fa:file'}
+      Primary Container', visible: true, text: T.B.A, font_size: 16, font: '', spacing_above: none,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: 'fa:file'}
   name: label_1
-  layout_properties: {row: UEWLIK, width_xs: 2, col_xs: 0, width: 142.664, grid_position: 'FYDSGS,DNTPMY',
+  layout_properties: {row: NLEPCT, width_xs: 12, col_xs: 0, width: 142.664, grid_position: 'TUIXER,WWMAVS',
     full_width_row: true}
-- type: GridPanel
-  properties: {spacing_above: small, spacing_below: small, background: '', foreground: '',
-    border: '', visible: true, role: null, tooltip: ''}
-  name: grid_panel_2
-  layout_properties: {grid_position: 'UITTLY,JAYSZD', full_width_row: true}
 is_package: true
