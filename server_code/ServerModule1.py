@@ -66,7 +66,10 @@ def process_netflix_data(version_id):
   #netflix_df['Country'] = netflix_df['Country'].fillna('International')
   netflix_df['country'] = [countries[0] for countries in netflix_df['country'].str.split(',')]
   country_counts = pd.DataFrame(netflix_df['country'].value_counts().rename_axis('countries').reset_index(name='counts')).sort_values(by=['countries'])
-  netflix_df['date_added'] = pd.to_datetime(netflix_df['date_added'])
+  netflix_df['date_added'] = netflix_df['date_added'].str.strip().astype(str)
+  #netflix_df['date_added'] = pd.to_datetime(netflix_df['date_added'], format="%B %d, %Y")
+  netflix_df['date_added'] = pd.to_datetime(netflix_df['date_added'], errors='coerce')
+  #netflix_df['date_added'] = pd.to_datetime(netflix_df['date_added'])
   print(netflix_df, country_counts)
   #return netflix_df, country_counts
 

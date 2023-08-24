@@ -3,6 +3,68 @@ container:
   properties: {col_widths: '{}'}
   event_bindings: {}
 components:
+- type: ColumnPanel
+  properties: {role: tonal-card, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '{}', spacing_below: small,
+    background: ''}
+  name: outlined_card_1
+  layout_properties: {grid_position: 'CNPLHH,WWFVTJ', full_width_row: true}
+  components:
+  - type: GridPanel
+    properties: {spacing_above: small, spacing_below: small, background: 'theme:Light
+        Overlay 1', foreground: '', border: '', visible: true, role: null, tooltip: ''}
+    name: grid_panel_1
+    layout_properties: {grid_position: 'BZQDXF,QUNXIY', full_width_row: true, row_background: ''}
+    components:
+    - type: DropDown
+      properties:
+        role: null
+        align: full
+        tooltip: ''
+        placeholder: Select Data Source
+        border: ''
+        enabled: true
+        foreground: ''
+        items: []
+        visible: true
+        font_size: null
+        font: ''
+        spacing_above: small
+        spacing_below: small
+        italic: false
+        background: theme:Surface
+        bold: false
+        underline: false
+        include_placeholder: true
+      name: drop_down_1
+      layout_properties: {grid_position: 'SDANPJ,VIBJZS', row: UEWLIK, width_xs: 4,
+        col_xs: 8, width: 320.328}
+      event_bindings: {change: drop_down_1_change}
+  - type: Button
+    properties: {role: filled-button, align: center, tooltip: Dev Tool - Prints To Console,
+      border: '', enabled: true, foreground: '', visible: true, text: Inspect As File,
+      font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false, icon: ''}
+    name: button_inspect_file
+    layout_properties: {row: BFGCCI, width_xs: 2, col_xs: 4, width: 145.164, grid_position: 'KACFDU,EAKKVZ'}
+    event_bindings: {click: button_inspect_file_click}
+  - type: Button
+    properties: {role: filled-button, align: center, tooltip: Dev Tool - Prints To Console,
+      border: '', enabled: true, foreground: '', visible: true, text: Inspect Version,
+      font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+      italic: false, background: 'theme:Tertiary', bold: false, underline: false,
+      icon: ''}
+    name: button_inspect_data_location
+    layout_properties: {grid_position: 'KACFDU,ZKKDOI'}
+    event_bindings: {click: button_inspect_data_location_click}
+  - type: Button
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Process Data, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: 'theme:Secondary', bold: false, underline: false, icon: ''}
+    name: button_process_data
+    layout_properties: {grid_position: 'KACFDU,GAIYZN'}
+    event_bindings: {click: button_process_data_click}
 - type: Label
   properties: {role: headline, align: left, tooltip: '', border: '', foreground: 'theme:On
       Primary Container', visible: true, text: 'Netflix Viewers: Data Visualization',
@@ -18,73 +80,86 @@ components:
   name: outlined_card_2
   layout_properties: {grid_position: 'RKWEUL,YECJKR', full_width_row: true}
   components:
-  - type: ColumnPanel
-    properties: {role: tonal-card, tooltip: '', border: '', foreground: '', visible: true,
-      wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '{}',
-      spacing_below: small, background: ''}
-    name: outlined_card_1
-    layout_properties: {grid_position: 'AVFLKI,WIMBDA', full_width_row: true}
+  - type: Label
+    properties: {role: title, align: left, tooltip: '', border: '', foreground: 'theme:On
+        Surface', visible: true, text: Data File, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: 'theme:Light
+        Overlay 1', bold: false, underline: false, icon: ''}
+    name: label_1
+    layout_properties: {row: UEWLIK, width_xs: 2, col_xs: 0, width: 142.664, grid_position: 'HMJGZW,ADSVFF'}
+- type: GridPanel
+  properties: {}
+  name: grid_panel_2
+  layout_properties: {grid_position: 'JYSVMC,INFWPY'}
+  components:
+  - type: Label
+    properties: {}
+    name: label_3
+    layout_properties: {row: DYIVSJ, width_xs: 2, col_xs: 0}
+  - type: DropDown
+    properties:
+      role: null
+      align: full
+      tooltip: ''
+      placeholder: Select Data
+      border: ''
+      enabled: true
+      foreground: ''
+      items: []
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: ''
+      bold: false
+      underline: false
+      include_placeholder: true
+    name: drop_down_2
+    layout_properties: {row: DYIVSJ, width_xs: 2, col_xs: 10, width: 136.664}
+- type: GridPanel
+  properties: {}
+  name: grid_panel_3
+  layout_properties: {grid_position: 'DHNUHI,KOBJZJ'}
+  components:
+  - type: FlowPanel
+    properties: {}
+    name: flow_panel_1
+    layout_properties: {row: KVUUXG, width_xs: 3, col_xs: 0}
     components:
-    - type: GridPanel
-      properties: {spacing_above: small, spacing_below: small, background: 'theme:Light
-          Overlay 1', foreground: '', border: '', visible: true, role: null, tooltip: ''}
-      name: grid_panel_1
-      layout_properties: {grid_position: 'BZQDXF,QUNXIY', full_width_row: true, row_background: ''}
-      components:
-      - type: Label
-        properties: {role: title, align: left, tooltip: '', border: '', foreground: 'theme:On
-            Surface', visible: true, text: Data File, font_size: null, font: '', spacing_above: small,
-          icon_align: left, spacing_below: small, italic: false, background: 'theme:Light
-            Overlay 1', bold: false, underline: false, icon: ''}
-        name: label_1
-        layout_properties: {row: UEWLIK, width_xs: 2, col_xs: 0, width: 142.664}
-      - type: DropDown
-        properties:
-          role: null
-          align: full
-          tooltip: ''
-          placeholder: Select Data Source
-          border: ''
-          enabled: true
-          foreground: ''
-          items: []
-          visible: true
-          font_size: null
-          font: ''
-          spacing_above: small
-          spacing_below: small
-          italic: false
-          background: theme:Surface
-          bold: false
-          underline: false
-          include_placeholder: true
-        name: drop_down_1
-        layout_properties: {grid_position: 'SDANPJ,VIBJZS', row: UEWLIK, width_xs: 4,
-          col_xs: 8, width: 320.328}
-        event_bindings: {change: drop_down_1_change}
-    - type: Button
-      properties: {role: filled-button, align: center, tooltip: Dev Tool - Prints To Console,
-        border: '', enabled: true, foreground: '', visible: true, text: Inspect As File,
-        font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
-        italic: false, background: '', bold: false, underline: false, icon: ''}
-      name: button_inspect_file
-      layout_properties: {row: BFGCCI, width_xs: 2, col_xs: 4, width: 145.164, grid_position: 'KACFDU,EAKKVZ'}
-      event_bindings: {click: button_inspect_file_click}
-    - type: Button
-      properties: {role: filled-button, align: center, tooltip: Dev Tool - Prints To Console,
-        border: '', enabled: true, foreground: '', visible: true, text: Inspect Version,
-        font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
-        italic: false, background: 'theme:Tertiary', bold: false, underline: false,
-        icon: ''}
-      name: button_inspect_data_location
-      layout_properties: {grid_position: 'KACFDU,ETRABB'}
-      event_bindings: {click: button_inspect_data_location_click}
-    - type: Button
-      properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-        foreground: '', visible: true, text: Process Data, font_size: null, font: '',
-        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-        background: 'theme:Secondary', bold: false, underline: false, icon: ''}
-      name: button_process_data
-      layout_properties: {grid_position: 'KACFDU,VCVJLQ'}
-      event_bindings: {click: button_process_data_click}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: '', font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: 'theme:Tertiary
+          Container', bold: false, underline: false, icon: ''}
+      name: label_4
+      layout_properties: {}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: '', font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: 'theme:On
+          Disabled', bold: false, underline: false, icon: ''}
+      name: label_7
+      layout_properties: {}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: '', font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: 'theme:Tertiary',
+        bold: false, underline: false, icon: ''}
+      name: label_8
+      layout_properties: {}
+  - type: Image
+    properties: {height: 116}
+    name: image_1
+    layout_properties: {row: KVUUXG, width_xs: 3, col_xs: 4}
+  - type: Label
+    properties: {}
+    name: label_9
+    layout_properties: {row: DBEXKI, width_xs: 7, col_xs: 0}
+- type: GridPanel
+  properties: {}
+  name: grid_panel_4
+  layout_properties: {grid_position: 'VAANZR,VWWQCU'}
+  components: []
 is_package: true
