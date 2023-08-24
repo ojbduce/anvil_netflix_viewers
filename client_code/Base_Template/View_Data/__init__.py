@@ -44,7 +44,7 @@ class View_Data(View_DataTemplate):
     """This method is called when the button is clicked"""
     if self.drop_down_1.selected_value is not None:
       file = self.selected_file
-      anvil.server.call('csv_to_dataframe_bytes', file)
+      anvil.server.call('load_data_from_file', file)
     else:
       alert("Please select a data source from the drop-down box")
 
@@ -52,7 +52,7 @@ class View_Data(View_DataTemplate):
     """This method is called when the button is clicked"""
     if self.drop_down_1.selected_value is not None:
       version_id = self.drop_down_1.selected_value['version']
-      anvil.server.call('csv_to_dataframe_version', version_id)
+      anvil.server.call('load_data_from_version', version_id)
     else:
       alert("Please select a data source from the drop-down box")
       

@@ -6,6 +6,7 @@ import uuid
 import pandas as pd
 from io import BytesIO
 
+# Database Functions
 @anvil.server.callable #why not?
 def generate_unique_id():
     return str(uuid.uuid4())
@@ -18,33 +19,34 @@ def upload_a_file_to_database(file, category):
   # add file. file is media object, path is name attribute of file, version is return from above
   app_tables.files.add_row(file=file, path=file.name, version=version, category=category)
   
-  
 @anvil.server.callable
 def show_uploaded_files():
   return app_tables.files.search()
+  
+# Data Processing
 
+  # Load user-selected data
 @anvil.server.callable
-def csv_to_dataframe_bytes(file):
-  file_like_object = BytesIO(file.get_bytes())
-  dataframe = pd.read_csv(file_like_object)
-  pd.set_option('display.max_columns', None)
-  print (dataframe.head)
-
-@anvil.server.callable
-def csv_to_dataframe_version(version_id):
+def load_data_from_version(version_id):
   row = app_tables.files.get(version = version_id)
   file = row['file']
   file_like_object = BytesIO(file.get_bytes())
   dataframe = pd.read_csv(file_like_object)
+  return dataframe
+
+  # Inspect version. Print df.head
+def inspect_data_from_version(version_id):
   #pd.set_option('display.width', 0)
   pd.set_option('display.max_columns', None)
   print (dataframe.head)
 
+  # Check category. Extend to Data Factory
 @anvil.server.callable
-def process_data(data, category):
+def process_data(version_id, category):
     if category == 'netflix':
       print(category)
-      return process_netflix_data(data)
+      return process_netflix_data(version_id)
+      # print(process_netflix_data(data))
     elif category == 'other':
       print(category)
       print("Nothing available. Please check later.")
@@ -53,9 +55,10 @@ def process_data(data, category):
     else:
         raise ValueError(f"Unknown data category: {category}")
       
-# choose file or version and archive the other function
-def process_netflix_data(file):
-  netflix_df = csv_to_dataframe_bytes(file)
+  # Process according to category type
+def process_netflix_data(data):
+  netflix_df = load_data_from_version(version_id)
+  netflix_df = csv_to_dataframe_version(version_id) # or repeat code as seperate process?
   netflix_df = netflix_df.loc[:,['type', 'country', 'date_added']]
   netflix_df = netflix_df.dropna(subset=['country'])
   #netflix_df['Country'] = netflix_df['Country'].fillna('International')
@@ -64,3 +67,18 @@ def process_netflix_data(file):
   netflix_df['date_added'] = pd.to_datetime(netflix_df['date_added'])
   return netflix_df, country_counts
 
+
+
+
+
+
+
+
+# Ancillary - another option for inspecting, by file. Simpler but less robust
+@anvil.server.callable
+def load_data_from_file(file):
+  file_like_object = BytesIO(file.get_bytes())
+  dataframe = pd.read_csv(file_like_object)
+  pd.set_option('display.max_columns', None)
+  print (dataframe.head)
+  print()
