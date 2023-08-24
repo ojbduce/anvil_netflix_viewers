@@ -57,3 +57,10 @@ def process_data(data, category):
 def process_netflix_data(file):
   netflix_df = csv_to_dataframe_bytes(file)
   netflix_df = netflix_df.loc[:,['type', 'country', 'date_added']]
+  netflix_df = netflix_df.dropna(subset=['country'])
+  #netflix_df['Country'] = netflix_df['Country'].fillna('International')
+  netflix_df['country'] = [countries[0] for countries in netflix_df['country'].str.split(',')]
+  country_counts = pd.DataFrame(netflix_df['country'].value_counts().rename_axis('countries').reset_index(name='counts')).sort_values(by=['countries'])
+  netflix_df['date_added'] = pd.to_datetime(netflix_df['date_added'])
+  return netflix_df, country_counts
+
