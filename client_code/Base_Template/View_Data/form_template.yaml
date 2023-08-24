@@ -6,40 +6,34 @@ components:
 - type: ColumnPanel
   properties: {role: tonal-card, tooltip: '', border: '', foreground: '', visible: true,
     wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '{}', spacing_below: small,
-    background: 'theme:Dark Overlay 2'}
+    background: ''}
   name: outlined_card_1
   layout_properties: {grid_position: 'CNPLHH,WWFVTJ', full_width_row: true}
   components:
-  - type: GridPanel
-    properties: {spacing_above: small, spacing_below: small, background: 'theme:Light
-        Overlay 1', foreground: '', border: '', visible: true, role: null, tooltip: ''}
-    name: grid_panel_1
-    layout_properties: {grid_position: 'BZQDXF,QUNXIY', full_width_row: true, row_background: ''}
-    components:
-    - type: DropDown
-      properties:
-        role: null
-        align: full
-        tooltip: ''
-        placeholder: Select Data Source
-        border: ''
-        enabled: true
-        foreground: ''
-        items: []
-        visible: true
-        font_size: null
-        font: ''
-        spacing_above: small
-        spacing_below: small
-        italic: false
-        background: theme:Surface
-        bold: false
-        underline: false
-        include_placeholder: true
-      name: drop_down_1
-      layout_properties: {grid_position: 'SDANPJ,VIBJZS', row: UEWLIK, width_xs: 4,
-        col_xs: 8, width: 320.328}
-      event_bindings: {change: drop_down_1_change}
+  - type: DropDown
+    properties:
+      role: null
+      align: full
+      tooltip: ''
+      placeholder: Select Data Source
+      border: ''
+      enabled: true
+      foreground: ''
+      items: []
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: theme:Surface
+      bold: false
+      underline: false
+      include_placeholder: true
+    name: drop_down_1
+    layout_properties: {grid_position: 'KACFDU,WNKMUA', row: UEWLIK, width_xs: 4,
+      col_xs: 0, width: 320.328}
+    event_bindings: {change: drop_down_1_change}
   - type: Button
     properties: {role: filled-button, align: center, tooltip: Dev Tool - Prints To Console,
       border: '', enabled: true, foreground: '', visible: true, text: Inspect As File,
@@ -52,8 +46,7 @@ components:
     properties: {role: filled-button, align: center, tooltip: Dev Tool - Prints To Console,
       border: '', enabled: true, foreground: '', visible: true, text: Inspect Version,
       font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
-      italic: false, background: 'theme:Tertiary', bold: false, underline: false,
-      icon: ''}
+      italic: false, background: 'theme:Outline', bold: false, underline: false, icon: ''}
     name: button_inspect_data_location
     layout_properties: {grid_position: 'KACFDU,ZKKDOI'}
     event_bindings: {click: button_inspect_data_location_click}
@@ -61,18 +54,10 @@ components:
     properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
       foreground: '', visible: true, text: Process Data, font_size: null, font: '',
       spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: 'theme:Secondary', bold: false, underline: false, icon: ''}
+      background: 'theme:Tertiary', bold: false, underline: false, icon: ''}
     name: button_process_data
     layout_properties: {grid_position: 'KACFDU,GAIYZN'}
     event_bindings: {click: button_process_data_click}
-- type: Label
-  properties: {role: headline, align: left, tooltip: '', border: '', foreground: 'theme:On
-      Primary Container', visible: true, text: 'Netflix Viewers: Data Visualization',
-    font_size: 28, font: '', spacing_above: small, icon_align: left, spacing_below: none,
-    italic: false, background: '', bold: true, underline: false, icon: ''}
-  name: label_2
-  layout_properties: {grid_position: 'XAVWKW,OCNMNL', full_width_row: true, row: HMGBJN,
-    width_xs: 12, col_xs: 0}
 - type: ColumnPanel
   properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
     wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
@@ -88,60 +73,25 @@ components:
     name: rich_text_1
     layout_properties: {grid_position: 'IAMYMC,NYOCWQ', full_width_row: true}
     components:
-    - type: FlowPanel
-      properties: {}
-      name: flow_panel_2
-      layout_properties: {}
-      components:
-      - type: Label
-        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: Viewing, font_size: 10, font: '', spacing_above: none,
-          icon_align: left, spacing_below: none, italic: false, background: '', bold: false,
-          underline: false, icon: 'fa:file'}
-        name: label_3
-        layout_properties: {grid_position: 'AAHDTO,TXUIPG', full_width_row: true}
-      - type: Label
-        properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: Data File, font_size: 14, font: '', spacing_above: none,
-          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-          underline: false, icon: ''}
-        name: label_1
-        layout_properties: {row: UEWLIK, width_xs: 2, col_xs: 0, width: 142.664, grid_position: 'HMJGZW,LCDLBJ'}
-- type: ColumnPanel
-  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
-    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-    spacing_below: small, background: ''}
-  name: outlined_card_2
-  layout_properties: {grid_position: 'RKWEUL,YECJKR', full_width_row: true}
-  components: []
-- type: FlowPanel
-  properties: {}
-  name: flow_panel_1
-  layout_properties: {row: KVUUXG, width_xs: 3, col_xs: 0, grid_position: 'FNBQIJ,AIBZQZ'}
-  components:
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-      spacing_below: small, italic: false, background: 'theme:Tertiary Container',
-      bold: false, underline: false, icon: ''}
-    name: label_4
-    layout_properties: {}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-      spacing_below: small, italic: false, background: 'theme:On Disabled', bold: false,
-      underline: false, icon: ''}
-    name: label_7
-    layout_properties: {}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-      spacing_below: small, italic: false, background: 'theme:Tertiary', bold: false,
-      underline: false, icon: ''}
-    name: label_8
-    layout_properties: {}
-- type: Spacer
-  properties: {height: 32}
-  name: spacer_1
-  layout_properties: {grid_position: 'INSJPM,LQJNKS'}
+    - type: Label
+      properties: {role: headline, align: left, tooltip: '', border: '', foreground: 'theme:On
+          Primary Container', visible: true, text: 'Netflix Viewers: Data Visualization',
+        font_size: 28, font: '', spacing_above: small, icon_align: left, spacing_below: none,
+        italic: false, background: '', bold: true, underline: false, icon: ''}
+      name: label_2
+      layout_properties: {grid_position: 'XAVWKW,OCNMNL', full_width_row: true, row: HMGBJN,
+        width_xs: 12, col_xs: 0}
+- type: Label
+  properties: {role: body, align: left, tooltip: '', border: '', foreground: 'theme:On
+      Primary Container', visible: true, text: Data File, font_size: 16, font: '',
+    spacing_above: none, icon_align: left, spacing_below: small, italic: false, background: '',
+    bold: false, underline: false, icon: 'fa:file'}
+  name: label_1
+  layout_properties: {row: UEWLIK, width_xs: 2, col_xs: 0, width: 142.664, grid_position: 'FYDSGS,DNTPMY',
+    full_width_row: true}
+- type: GridPanel
+  properties: {spacing_above: small, spacing_below: small, background: '', foreground: '',
+    border: '', visible: true, role: null, tooltip: ''}
+  name: grid_panel_2
+  layout_properties: {grid_position: 'UITTLY,JAYSZD', full_width_row: true}
 is_package: true
