@@ -17,6 +17,7 @@ class My_Data(My_DataTemplate):
     categories = app_tables.files.search()
     #self.drop_down_file_category.items = [c['category']for c in categories]
     self.drop_down_file_category.items = ['netflix','other']
+    self.repeating_panel_1.items = anvil.server.call('show_uploaded_files')
 
   def file_loader_1_change(self, file, **event_args):
     """This method is called when a new file is loaded into this FileLoader"""
@@ -33,6 +34,8 @@ class My_Data(My_DataTemplate):
   def button_refresh_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.repeating_panel_1.items = anvil.server.call('show_uploaded_files')
+    # if dropdown.selected_value == x:
+    #show x else show y
 
   
 

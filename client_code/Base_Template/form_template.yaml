@@ -8,11 +8,8 @@ components:
   properties: {col_widths: '{}'}
   name: content_panel
   layout_properties: {slot: default}
-  components:
-  - type: form:Base_Template.View_Data
-    properties: {}
-    name: custom_1
-    layout_properties: {grid_position: 'DDBRVV,HTIEHQ', full_width_row: true}
+  components: []
+  event_bindings: {show: content_panel_show}
 - type: FlowPanel
   properties: {}
   name: navbar_links
@@ -25,6 +22,7 @@ components:
       italic: false, background: '', bold: false, underline: false, icon: 'fa:home'}
     name: link_home
     layout_properties: {}
+    event_bindings: {click: link_home_click}
   - type: Link
     properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: '', font_size: null, wrap_on: mobile, font: '', col_spacing: medium,
@@ -57,8 +55,9 @@ components:
       foreground: '', visible: true, text: Home, font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
       underline: false, icon: ''}
-    name: button_1
+    name: button_view_report
     layout_properties: {grid_position: 'XUOIWA,PGYVNS'}
+    event_bindings: {click: button_view_report_click}
   - type: Button
     properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
       foreground: '', visible: true, text: My Data, font_size: null, font: '', spacing_above: small,

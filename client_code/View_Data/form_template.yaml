@@ -1,7 +1,6 @@
 container:
   type: ColumnPanel
   properties: {col_widths: '{}'}
-  event_bindings: {}
 components:
 - type: Label
   properties: {role: headline, align: left, tooltip: '', border: '', foreground: 'theme:On
@@ -9,14 +8,19 @@ components:
     font: '', spacing_above: small, icon_align: left, spacing_below: none, italic: false,
     background: '', bold: true, underline: false, icon: ''}
   name: label_2
-  layout_properties: {grid_position: 'PDLXRO,OXMMLK', full_width_row: true, row: HMGBJN,
-    width_xs: 12, col_xs: 0}
+  layout_properties:
+    col_widths: {}
+    grid_position: OFTKQC,HRHWAW
+    full_width_row: false
 - type: ColumnPanel
   properties: {role: tonal-card, tooltip: '', border: '', foreground: '', visible: true,
     wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '{}', spacing_below: small,
     background: ''}
   name: outlined_card_1
-  layout_properties: {grid_position: 'CNPLHH,WWFVTJ', full_width_row: true}
+  layout_properties:
+    col_widths: {}
+    grid_position: LYYKLX,CBXTZR
+    full_width_row: false
   components:
   - type: DropDown
     properties:
@@ -70,13 +74,26 @@ components:
 - type: Spacer
   properties: {height: 23}
   name: spacer_1
-  layout_properties: {grid_position: 'GBMHZZ,FUVQTM'}
+  layout_properties:
+    col_widths: {}
+    grid_position: UYJPTX,ZQVQDY
 - type: Label
   properties: {role: body, align: left, tooltip: '', border: '', foreground: 'theme:On
       Primary Container', visible: true, text: T.B.A, font_size: 16, font: '', spacing_above: none,
     icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
     underline: false, icon: 'fa:file'}
   name: label_1
-  layout_properties: {row: NLEPCT, width_xs: 12, col_xs: 0, width: 142.664, grid_position: 'TUIXER,WWMAVS',
-    full_width_row: true}
+  layout_properties:
+    col_widths: {}
+    grid_position: XMEKOT,UDHKBF
+    full_width_row: false
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: column_panel_1
+  layout_properties: {grid_position: 'GQBTHC,XFQQFG'}
+  components:
+  - type: Plot
+    properties: {}
+    name: plot_1
+    layout_properties: {grid_position: 'OORBXH,FMXXAL'}
 is_package: true

@@ -1,3 +1,4 @@
+
 from ._anvil_designer import View_DataTemplate
 from anvil import *
 import plotly.graph_objects as go
@@ -71,8 +72,4 @@ class View_Data(View_DataTemplate):
 
 
     
-
-
-    
-
 
