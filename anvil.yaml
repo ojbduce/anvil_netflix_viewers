@@ -4,15 +4,15 @@ services:
   client_config: {}
   server_config: {}
 startup: {type: form, module: My_Data}
-package_name: Pandas_Dashboard
+package_name: Netflix_Viewers
 allow_embedding: false
-name: Pandas Dashboard
+name: Netflix Viewers
 runtime_options:
   version: 2
   client_version: '3'
   server_version: python3-full
   server_spec: {base: python310-standard}
-metadata: {title: Pandas Dashboard, description: User Uploads and reads data displayed on a plot}
+metadata: {title: Pandas Dashboard, description: Base for Data Pipeline}
 startup_form: null
 db_schema:
   files:
