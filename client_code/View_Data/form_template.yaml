@@ -86,7 +86,7 @@ components:
     grid_position: UYJPTX,ZQVQDY
 - type: Label
   properties: {role: body, align: left, tooltip: '', border: '', foreground: 'theme:On
-      Primary Container', visible: true, text: T.B.A, font_size: 16, font: '', spacing_above: none,
+      Primary Container', visible: true, text: ____, font_size: 16, font: '', spacing_above: none,
     icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
     underline: false, icon: 'fa:file'}
   name: label_1
@@ -111,15 +111,4 @@ components:
     properties: {}
     name: plot_3
     layout_properties: {grid_position: 'ROKVJM,VPJKRN'}
-- type: ColumnPanel
-  properties: {role: outlined-card, col_widths: '{}'}
-  name: outlined_card_4_copy_2
-  layout_properties:
-    col_widths: {}
-    grid_position: UDVBJG,GQLXMO
-  components:
-  - type: Image
-    properties: {height: 106.5}
-    name: image_1_copy_2
-    layout_properties: {grid_position: 'GAIANJ,YSAMXS'}
 is_package: true

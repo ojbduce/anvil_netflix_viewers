@@ -11,7 +11,9 @@ class View_Data(View_DataTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.plot_1.figure = None
+    self.plot_1.visible = False
+    self.plot_2.visible = False
+    self.plot_3.visible = False
     self.selected_file = None
     self.show_files_dropdown()
     if self.drop_down_1.selected_value:
@@ -64,6 +66,9 @@ class View_Data(View_DataTemplate):
 
   def button_process_data_click(self, **event_args):
     """This method is called when the button is clicked"""
+    self.plot_1.visible = True
+    self.plot_2.visible = True
+    self.plot_3.visible = True
     if self.drop_down_1.selected_value is not None:
       version_id = self.drop_down_1.selected_value['version']
       category = self.drop_down_1.selected_value['category']

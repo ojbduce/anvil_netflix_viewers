@@ -89,18 +89,60 @@ def create_plots(netflix_df, country_counts):
       locations=sorted(netflix_df['country'].unique().tolist()), 
       locationmode='country names',  
       text = country_counts['counts'],
-      marker= dict(size= country_counts['counts'], sizemode = 'area')))
+      marker= dict(
+        size= country_counts['counts'],
+        line_width = 0,
+        sizeref = 2,
+        sizemode = 'area',
+        color='#6750A4' # Making the map bubbles tertiary
+      ))
+  )
   fig2 = go.Figure(
     go.Pie(
     labels=netflix_df['type'], 
-    values=netflix_df['type'].value_counts()
-    ))
+    values=netflix_df['type'].value_counts(),
+    marker=dict(colors=['#7D5260', '#FFD8E4']), # Making the pie chart two different shades of red
+    hole=.4, # Adding a hole to the middle of the chart
+    textposition= 'inside', 
+    textinfo='percent+label'
+  ))
+    
   
   fig3 = go.Figure(
     go.Scatter(
       x=netflix_df['date_added'].dt.year.value_counts().sort_index().index, 
-      y=netflix_df['date_added'].dt.year.value_counts().sort_index()
+      y=netflix_df['date_added'].dt.year.value_counts().sort_index(),
+      line=dict(color='#6750A4', width=3)
     ))
+  fig1.update_layout(
+  title='Production countries',
+  font=dict(family='Roboto', color='#1C1B1F'), # Customizing the font
+  margin=dict(t=60, b=30, l=0, r=0), # Changing the margin sizes of the figure
+  paper_bgcolor='#E7E0EC', # Setting the card color to grey
+  plot_bgcolor='#E7E0EC', # Setting background of the figure to grey
+  hoverlabel=dict(font_size=14, font_family='Roboto'),
+  geo=dict(
+    framecolor='rgba(0,0,0,0)',
+    bgcolor='rgba(0,0,0,0)',
+    landcolor='#7D7D7D',
+    lakecolor = 'rgba(0,0,0,0)',))
+
+  fig2.update_layout(
+  title='Content breakdown by type',
+  margin=dict(t=60, b=30, l=10, r=10),
+  showlegend=False,
+  paper_bgcolor='#E7E0EC',
+  plot_bgcolor='#E7E0EC',
+  font=dict(family='Roboto', color='#1C1B1F'))
+
+  fig3.update_layout(
+  title='Content added over time',
+  margin=dict(t=60, b=40, l=50, r=50),
+  paper_bgcolor='#E7E0EC',
+  plot_bgcolor='#E7E0EC',
+  font=dict(family='Roboto', color='#1C1B1F'),
+  hoverlabel=dict(font_size=14, font_family='Roboto'))
+
 
   return fig1, fig2, fig3
 
