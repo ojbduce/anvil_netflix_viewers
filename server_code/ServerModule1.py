@@ -90,10 +90,19 @@ def create_plots(netflix_df, country_counts):
       locationmode='country names',  
       text = country_counts['counts'],
       marker= dict(size= country_counts['counts'], sizemode = 'area')))
+  fig2 = go.Figure(
+    go.Pie(
+    labels=netflix_df['type'], 
+    values=netflix_df['type'].value_counts()
+    ))
+  
+  fig3 = go.Figure(
+    go.Scatter(
+      x=netflix_df['date_added'].dt.year.value_counts().sort_index().index, 
+      y=netflix_df['date_added'].dt.year.value_counts().sort_index()
+    ))
 
-  return fig1
-
-
+  return fig1, fig2, fig3
 
 
 

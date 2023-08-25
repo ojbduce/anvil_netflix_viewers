@@ -67,7 +67,11 @@ class View_Data(View_DataTemplate):
     if self.drop_down_1.selected_value is not None:
       version_id = self.drop_down_1.selected_value['version']
       category = self.drop_down_1.selected_value['category']
-      self.plot_1.figure = anvil.server.call('data_pipeline', version_id, category)
+      fig1, fig2, fig3 = anvil.server.call('data_pipeline', version_id, category)
+      self.plot_1.figure = fig1
+      self.plot_2.figure = fig2
+      self.plot_3.figure = fig3
+      
     else:
       alert("Please select a data source from the drop-down box")
 
