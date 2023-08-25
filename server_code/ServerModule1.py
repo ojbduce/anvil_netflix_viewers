@@ -115,7 +115,7 @@ def create_plots(netflix_df, country_counts):
       line=dict(color='#6750A4', width=3)
     ))
   fig1.update_layout(
-  title='Production countries',
+  title='Production Countries',
   font=dict(family='Roboto', color='#1C1B1F'), # Customizing the font
   margin=dict(t=60, b=30, l=0, r=0), # Changing the margin sizes of the figure
   paper_bgcolor='#E7E0EC', # Setting the card color to grey
@@ -128,7 +128,7 @@ def create_plots(netflix_df, country_counts):
     lakecolor = 'rgba(0,0,0,0)',))
 
   fig2.update_layout(
-  title='Content breakdown by type',
+  title='Content Breakdown By Type',
   margin=dict(t=60, b=30, l=10, r=10),
   showlegend=False,
   paper_bgcolor='#E7E0EC',
@@ -136,7 +136,7 @@ def create_plots(netflix_df, country_counts):
   font=dict(family='Roboto', color='#1C1B1F'))
 
   fig3.update_layout(
-  title='Content added over time',
+  title='Content Added Over Time',
   margin=dict(t=60, b=40, l=50, r=50),
   paper_bgcolor='#E7E0EC',
   plot_bgcolor='#E7E0EC',

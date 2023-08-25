@@ -20,6 +20,13 @@ components:
         background: '', bold: true, underline: false, icon: ''}
       name: label_3
       layout_properties: {grid_position: 'VTFJFK,RFHHCY'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: 'Upload A file:', font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'LSNYTD,QWMWAN'}
     - type: ColumnPanel
       properties: {role: tonal-card, tooltip: '', border: '', foreground: '', visible: true,
         wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
@@ -32,7 +39,7 @@ components:
           role: null
           align: full
           tooltip: ''
-          placeholder: Please Select Category
+          placeholder: 'Upload File Type:'
           border: ''
           enabled: true
           foreground: theme:On Surface Variant
@@ -87,44 +94,43 @@ components:
         name: button_refresh
         layout_properties: {grid_position: 'NZRJMY,WVTOJG'}
         event_bindings: {click: button_refresh_click}
-    - type: ColumnPanel
-      properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
-        wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-        spacing_below: small, background: ''}
-      name: outlined_card_3
-      layout_properties: {grid_position: 'FQYDGR,PQQRUX'}
-      components:
-      - type: ColumnPanel
-        properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
-          wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-          spacing_below: small, background: 'theme:Light Overlay 2'}
-        name: outlined_card_4
-        layout_properties: {grid_position: 'YZQKDC,RFLQEY'}
-        components:
-        - type: DataGrid
-          properties:
-            role: tonal-data-grid
-            columns:
-            - {id: HPJGDT, title: Name, data_key: path, $$hashKey: 'object:39810'}
-            - {id: ACXJPB, title: File, data_key: file, $$hashKey: 'object:39811'}
-            - {id: SMOHXK, title: Version, data_key: version, $$hashKey: 'object:119025'}
-            - {id: HIRZOR, title: Button, data_key: version, $$hashKey: 'object:104206'}
-            auto_header: true
-            tooltip: ''
-            border: ''
-            foreground: ''
-            rows_per_page: 20
-            visible: true
-            wrap_on: never
-            show_page_controls: true
-            spacing_above: small
-            spacing_below: small
-            background: ''
-          name: data_grid_1
-          layout_properties: {grid_position: 'BYCZKF,YNBUME'}
-          components:
-          - type: RepeatingPanel
-            properties: {spacing_above: none, spacing_below: none, item_template: My_Data.RowTemplate1}
-            name: repeating_panel_1
-            layout_properties: {}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: 'Files Uploaded:', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: true, underline: false,
+    icon: ''}
+  name: label_2
+  layout_properties: {grid_position: 'UABTCN,LZQRVV'}
+- type: ColumnPanel
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: ''}
+  name: outlined_card_2
+  layout_properties: {grid_position: 'OWITEM,OHVCDE'}
+  components:
+  - type: DataGrid
+    properties:
+      role: tonal-data-grid
+      columns:
+      - {id: HPJGDT, title: Name, data_key: path, $$hashKey: 'object:39810'}
+      - {id: ACXJPB, title: File, data_key: file, $$hashKey: 'object:39811'}
+      - {id: SMOHXK, title: Version, data_key: version, $$hashKey: 'object:119025'}
+      auto_header: true
+      tooltip: ''
+      border: ''
+      foreground: ''
+      rows_per_page: 20
+      visible: true
+      wrap_on: never
+      show_page_controls: true
+      spacing_above: small
+      spacing_below: small
+      background: theme:Light Overlay 1
+    name: data_grid_1
+    layout_properties: {grid_position: 'AUVWFS,PEESIS'}
+    components:
+    - type: RepeatingPanel
+      properties: {spacing_above: none, spacing_below: none, item_template: My_Data.RowTemplate1}
+      name: repeating_panel_1
+      layout_properties: {}
 is_package: true
