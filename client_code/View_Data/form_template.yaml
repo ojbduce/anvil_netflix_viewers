@@ -71,6 +71,13 @@ components:
     name: button_process_data
     layout_properties: {grid_position: 'KACFDU,GAIYZN'}
     event_bindings: {click: button_process_data_click}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: Viewing, font_size: 12, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: true, underline: false,
+    icon: ''}
+  name: label_3
+  layout_properties: {grid_position: 'UYJPTX,NWKMYM'}
 - type: Spacer
   properties: {height: 23}
   name: spacer_1
@@ -87,47 +94,6 @@ components:
     col_widths: {}
     grid_position: XMEKOT,UDHKBF
     full_width_row: false
-- type: ColumnPanel
-  properties: {col_widths: '{}'}
-  name: column_panel_2
-  layout_properties: {grid_position: 'HTQUUO,ADGLDE'}
-  components:
-  - type: ColumnPanel
-    properties: {role: elevated-card, tooltip: '', border: '', foreground: '', visible: true,
-      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-      spacing_below: small, background: ''}
-    name: outlined_card_2
-    layout_properties: {grid_position: 'IRDGFD,ICNBQE'}
-    components:
-    - type: ColumnPanel
-      properties: {role: tonal-card, tooltip: '', border: '', foreground: '', visible: true,
-        wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-        spacing_below: small, background: ''}
-      name: outlined_card_4_copy_3
-      layout_properties:
-        col_widths: {}
-        grid_position: PLOVSI,EQIGYR
-      components:
-      - type: Image
-        properties: {height: 106.5}
-        name: image_1_copy_3
-        layout_properties: {grid_position: 'GAIANJ,YSAMXS'}
-- type: ColumnPanel
-  properties: {role: outlined-card, col_widths: '{}'}
-  name: outlined_card_3
-  layout_properties: {grid_position: 'HTQUUO,HHJNTN'}
-  components:
-  - type: ColumnPanel
-    properties: {role: outlined-card, col_widths: '{}'}
-    name: outlined_card_4_copy
-    layout_properties:
-      col_widths: {}
-      grid_position: QJTKRQ,WEMUMK
-    components:
-    - type: Image
-      properties: {height: 106.5}
-      name: image_1_copy
-      layout_properties: {grid_position: 'GAIANJ,YSAMXS'}
 - type: ColumnPanel
   properties: {col_widths: '{}'}
   name: column_panel_1

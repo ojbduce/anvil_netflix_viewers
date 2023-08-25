@@ -29,6 +29,7 @@ def show_uploaded_files():
   # Load user-selected data
 @anvil.server.callable
 def load_data_from_version(version_id):
+  print("Loading version of your file")
   row = app_tables.files.get(version = version_id)
   file = row['file']
   file_like_object = BytesIO(file.get_bytes())
@@ -46,7 +47,7 @@ def inspect_data_from_version(version_id):
 
   # Check category. Extend to Data Factory
 @anvil.server.callable
-def process_data(version_id, category):
+def data_pipeline(version_id, category):
     if category == 'netflix':
       print(category)
       return process_netflix_data(version_id)
@@ -54,15 +55,20 @@ def process_data(version_id, category):
     elif category == 'other':
       print(category)
       print("Nothing available. Please check later.")
-        #return process_youtube_data(data)
+        
     # ... other categories
     else:
         raise ValueError(f"Unknown data category: {category}")
       
   # Process according to category type
+@anvil.server.callable
 def process_netflix_data(version_id):
+  print("Processing Netflix data. Inside function process...")
   netflix_df = load_data_from_version(version_id)
+  print("Version found")
+  print(netflix_df)
   netflix_df = netflix_df.loc[:,['type', 'country', 'date_added']]
+  print(".loc not the issue?")
   netflix_df = netflix_df.dropna(subset=['country'])
   #netflix_df['Country'] = netflix_df['Country'].fillna('International')
   netflix_df['country'] = [countries[0] for countries in netflix_df['country'].str.split(',')]
@@ -73,6 +79,19 @@ def process_netflix_data(version_id):
   #netflix_df['date_added'] = pd.to_datetime(netflix_df['date_added'])
   print(netflix_df, country_counts)
   #return netflix_df, country_counts
+  return create_plots(netflix_df,country_counts)
+
+@anvil.server.callable
+def create_plots(netflix_df, country_counts):
+  print("Creating plots...")
+  fig1 = go.Figure(
+    go.Scattergeo(
+      locations=sorted(netflix_df['country'].unique().tolist()), 
+      locationmode='country names',  
+      text = country_counts['counts'],
+      marker= dict(size= country_counts['counts'], sizemode = 'area')))
+
+  return fig1
 
 
 

@@ -11,6 +11,7 @@ class View_Data(View_DataTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.plot_1.figure = None
     self.selected_file = None
     self.show_files_dropdown()
     if self.drop_down_1.selected_value:
@@ -64,9 +65,9 @@ class View_Data(View_DataTemplate):
   def button_process_data_click(self, **event_args):
     """This method is called when the button is clicked"""
     if self.drop_down_1.selected_value is not None:
-      data = self.drop_down_1.selected_value['version']
+      version_id = self.drop_down_1.selected_value['version']
       category = self.drop_down_1.selected_value['category']
-      anvil.server.call('process_data', data, category)
+      self.plot_1.figure = anvil.server.call('data_pipeline', version_id, category)
     else:
       alert("Please select a data source from the drop-down box")
 
