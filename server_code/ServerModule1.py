@@ -5,6 +5,7 @@ import anvil.server
 import uuid 
 import pandas as pd
 from io import BytesIO
+import plotly.graph_objects as go
 
 # Database Functions
 @anvil.server.callable #why not?
